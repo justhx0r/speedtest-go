@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
+//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func BenchmarkLogSpeed(b *testing.B) {
 	s := New()
 	config := &UserConfig{
@@ -19,7 +19,7 @@ func BenchmarkLogSpeed(b *testing.B) {
 	}
 }
 
-//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
+//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func TestNew(t *testing.T) {
 	t.Run("DefaultDoer", func(t *testing.T) {
 		c := New()
@@ -39,7 +39,7 @@ func TestNew(t *testing.T) {
 	})
 }
 
-//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
+//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func TestUserAgent(t *testing.T) {
 	testServer := func(expectedUserAgent string) *httptest.Server {
 		return httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

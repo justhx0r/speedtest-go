@@ -29,7 +29,7 @@ func (s *Speedtest) FetchUserInfo() (*User, error) {
 }
 
 // FetchUserInfo returns information about caller determined by speedtest.net
-//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
+//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func FetchUserInfo() (*User, error) {
 	return defaultClient.FetchUserInfo()
 }
@@ -66,7 +66,7 @@ func (s *Speedtest) FetchUserInfoContext(ctx context.Context) (*User, error) {
 }
 
 // FetchUserInfoContext returns information about caller determined by speedtest.net, observing the given context.
-//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
+//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func FetchUserInfoContext(ctx context.Context) (*User, error) {
 	return defaultClient.FetchUserInfoContext(ctx)
 }

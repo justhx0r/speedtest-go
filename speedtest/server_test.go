@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
+//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func TestFetchServerList(t *testing.T) {
 	client := New()
 	client.User = &User{
@@ -29,7 +29,7 @@ func TestFetchServerList(t *testing.T) {
 	}
 }
 
-//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
+//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func TestDistanceSame(t *testing.T) {
 	for i := 0; i < 10000000; i++ {
 		v1 := rand.Float64() * 90
@@ -59,7 +59,7 @@ func TestDistanceSame(t *testing.T) {
 	}
 }
 
-//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
+//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func TestDistance(t *testing.T) {
 	d := distance(0.0, 0.0, 1.0, 1.0)
 	if d < 157 || 158 < d {
@@ -83,7 +83,7 @@ func TestDistance(t *testing.T) {
 	}
 }
 
-//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
+//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func TestFindServer(t *testing.T) {
 	servers := Servers{
 		&Server{
@@ -137,7 +137,7 @@ func TestFindServer(t *testing.T) {
 	}
 }
 
-//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
+//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func TestCustomServer(t *testing.T) {
 	// Good server
 	got, err := CustomServer("https://example.com/upload.php")
@@ -155,7 +155,7 @@ func TestCustomServer(t *testing.T) {
 	}
 }
 
-//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
+//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func TestFetchServerByID(t *testing.T) {
 	testData := map[string]bool{
 		"45170":     true,
@@ -178,7 +178,7 @@ func TestFetchServerByID(t *testing.T) {
 	}
 }
 
-//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
+//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func TestTotalDurationCount(t *testing.T) {
 	server, _ := CustomServer("https://example.com/upload.php")
 
