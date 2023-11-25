@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/showwin/speedtest-go/speedtest"
+	"github.com/justhx0r/speedtest-go/speedtest"
 	"log"
 )
 

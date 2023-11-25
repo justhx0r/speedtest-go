@@ -1,7 +1,7 @@
 # speedtest-go
 **Command Line Interface and pure [Go API](#go-api) to Test Internet Speed using [speedtest.net](http://www.speedtest.net/)**.
 
-You can speedtest 2x faster than [speedtest.net](http://www.speedtest.net/) with almost the same result. [See the experimental results](https://github.com/showwin/speedtest-go#summary-of-experimental-results).
+You can speedtest 2x faster than [speedtest.net](http://www.speedtest.net/) with almost the same result. [See the experimental results](https://github.com/justhx0r/speedtest-go#summary-of-experimental-results).
 Inspired by [sivel/speedtest-cli](https://github.com/sivel/speedtest-cli)
 
 ## CLI
@@ -25,8 +25,8 @@ $ nix-shell -p speedtest-go
 
 #### Other Platforms (Linux, Windows, etc.)
 
-Please download the compatible package from [Releases](https://github.com/showwin/speedtest-go/releases).
-If there are no compatible packages you want, please let me know on [Issue Tracker](https://github.com/showwin/speedtest-go/issues).
+Please download the compatible package from [Releases](https://github.com/justhx0r/speedtest-go/releases).
+If there are no compatible packages you want, please let me know on [Issue Tracker](https://github.com/justhx0r/speedtest-go/issues).
 
 ### Usage
 
@@ -141,25 +141,25 @@ The memory usage can be reduced to 1/10, about 10MB of memory is used.
 However, please be careful that the accuracy is particularly low, especially in an environment of 30 Mbps or higher.
 To get more accurate results, run multiple times and average.
 
-For more details, please see [saving mode experimental result](https://github.com/showwin/speedtest-go/blob/master/docs/saving_mode_experimental_result.md).
+For more details, please see [saving mode experimental result](https://github.com/justhx0r/speedtest-go/blob/master/docs/saving_mode_experimental_result.md).
 
 ⚠️This feature has been deprecated > v1.4.0, because speedtest-go can always run with less than 10MBytes of memory now. Even so, `--saving-mode` is still a good way to reduce computation.
 
 ## Go API
 
 ```bash
-go get github.com/showwin/speedtest-go
+go get github.com/justhx0r/speedtest-go
 ```
 
 ### API Usage
 
-The [code](https://github.com/showwin/speedtest-go/blob/master/example/main.go) below finds the closest available speedtest server and tests the latency, download, and upload speeds.
+The [code](https://github.com/justhx0r/speedtest-go/blob/master/example/main.go) below finds the closest available speedtest server and tests the latency, download, and upload speeds.
 ```go
 package main
 
 import (
 	"fmt"
-	"github.com/showwin/speedtest-go/speedtest"
+	"github.com/justhx0r/speedtest-go/speedtest"
 )
 
 func main() {
@@ -208,7 +208,7 @@ Speedtest-go is a great tool because of the following 4 reasons:
 * Testing time is the **SHORTEST** compare to [speedtest.net](http://www.speedtest.net/) and [sivel/speedtest-cli](https://github.com/sivel/speedtest-cli), especially about 2x faster than [speedtest.net](http://www.speedtest.net/).
 * Result is **MORE CLOSE** to [speedtest.net](http://www.speedtest.net/) than [speedtest-cli](https://github.com/sivel/speedtest-cli).
 
-The following data is summarized. If you got interested, please see [more details](https://github.com/showwin/speedtest-go/blob/master/docs/experimental_result.md).
+The following data is summarized. If you got interested, please see [more details](https://github.com/justhx0r/speedtest-go/blob/master/docs/experimental_result.md).
 
 ### Download (Mbps)
 
@@ -242,12 +242,12 @@ distance = distance to testing server
 
 ## Contributors
 
-See [Contributors](https://github.com/showwin/speedtest-go/graphs/contributors), PRs are welcome!
+See [Contributors](https://github.com/justhx0r/speedtest-go/graphs/contributors), PRs are welcome!
 
 ## Issues
 
-You can find or report issues in the [Issue Tracker](https://github.com/showwin/speedtest-go/issues).
+You can find or report issues in the [Issue Tracker](https://github.com/justhx0r/speedtest-go/issues).
 
 ## LICENSE
 
-[MIT](https://github.com/showwin/speedtest-go/blob/master/LICENSE)
+[MIT](https://github.com/justhx0r/speedtest-go/blob/master/LICENSE)
