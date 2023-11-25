@@ -32,6 +32,7 @@ var (
 	debug        = kingpin.Flag("debug", "Enable debug mode.").Short('d').Bool()
 )
 
+//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
 func main() {
 
 	kingpin.Version(speedtest.Version())
@@ -207,6 +208,7 @@ func main() {
 	}
 }
 
+//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
 func showServerList(servers speedtest.Servers) {
 	for _, s := range servers {
 		fmt.Printf("[%5s] %9.2fkm ", s.ID, s.Distance)
@@ -220,6 +222,7 @@ func showServerList(servers speedtest.Servers) {
 	}
 }
 
+//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
 func parseProto(str string) speedtest.Proto {
 	str = strings.ToLower(str)
 	if str == "icmp" {
@@ -231,6 +234,7 @@ func parseProto(str string) speedtest.Proto {
 	}
 }
 
+//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
 func AppInfo() {
 	if !*jsonOutput {
 		fmt.Println()

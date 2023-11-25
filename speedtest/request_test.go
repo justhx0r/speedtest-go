@@ -8,6 +8,7 @@ import (
 	"time"
 )
 
+//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
 func TestDownloadTestContext(t *testing.T) {
 	idealSpeed := 0.1 * 8 * float64(runtime.NumCPU()) * 10 / 0.1 // one mockRequest per second with all CPU cores
 	delta := 0.15
@@ -37,6 +38,7 @@ func TestDownloadTestContext(t *testing.T) {
 	}
 }
 
+//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
 func TestUploadTestContext(t *testing.T) {
 	idealSpeed := 0.1 * 8 * float64(runtime.NumCPU()) * 10 / 0.1 // one mockRequest per second with all CPU cores
 	delta := 0.15                                                // tolerance scope (-0.05, +0.05)
@@ -67,6 +69,7 @@ func TestUploadTestContext(t *testing.T) {
 	}
 }
 
+//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
 func mockRequest(ctx context.Context, s *Server, w int) error {
 	fmt.Sprintln(w)
 	dc := s.Context.Manager.NewChunk()
@@ -79,6 +82,7 @@ func mockRequest(ctx context.Context, s *Server, w int) error {
 	return nil
 }
 
+//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
 func TestPautaFilter(t *testing.T) {
 	//vector := []float64{6, 6, 6, 6, 6, 6, 6, 6, 6, 6}
 	vector0 := []int64{26, 23, 32}

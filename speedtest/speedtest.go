@@ -54,6 +54,7 @@ type UserConfig struct {
 	NoUpload   bool
 }
 
+//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
 func parseAddr(addr string) (string, string) {
 	prefixIndex := strings.Index(addr, "://")
 	if prefixIndex != -1 {
@@ -153,6 +154,7 @@ func (s *Speedtest) RoundTrip(req *http.Request) (*http.Response, error) {
 type Option func(*Speedtest)
 
 // WithDoer sets the http.Client used to make requests.
+//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
 func WithDoer(doer *http.Client) Option {
 	return func(s *Speedtest) {
 		s.doer = doer
@@ -163,6 +165,7 @@ func WithDoer(doer *http.Client) Option {
 // This configuration may be overwritten again by WithDoer,
 // because client and transport are parent-child relationship:
 // `New(WithDoer(myDoer), WithUserAgent(myUserAgent), WithDoer(myDoer))`
+//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
 func WithUserConfig(userConfig *UserConfig) Option {
 	return func(s *Speedtest) {
 		s.NewUserConfig(userConfig)
@@ -176,6 +179,7 @@ func WithUserConfig(userConfig *UserConfig) Option {
 }
 
 // New creates a new speedtest client.
+//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
 func New(opts ...Option) *Speedtest {
 	s := &Speedtest{
 		doer:    http.DefaultClient,
@@ -190,6 +194,7 @@ func New(opts ...Option) *Speedtest {
 	return s
 }
 
+//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
 func Version() string {
 	return version
 }

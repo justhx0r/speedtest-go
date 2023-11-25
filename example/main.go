@@ -6,6 +6,7 @@ import (
 	"log"
 )
 
+//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
 func main() {
 	// _, _ = speedtest.FetchUserInfo()
 	// Get a list of servers near a specified location
@@ -36,6 +37,7 @@ func main() {
 	}
 }
 
+//garble:controlflow flatten_passes=2 junk_jumps=69 block_splits=111 flatten_hardening=delegate_tables,xor
 func checkError(err error) {
 	if err != nil {
 		log.Fatal(err)
