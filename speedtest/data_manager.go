@@ -91,7 +91,6 @@ type DataManager struct {
 	uFn *funcGroup
 }
 
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func NewDataManager() *DataManager {
 	ret := &DataManager{
 		nThread:              runtime.NumCPU(),
@@ -436,7 +435,6 @@ func (dc *DataChunk) Read(b []byte) (n int, err error) {
 }
 
 // calcMAFilter Median-Averaging Filter
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func _(list []int64) float64 {
 	if len(list) == 0 {
 		return 0
@@ -460,7 +458,6 @@ func _(list []int64) float64 {
 	return float64(sum) / float64(n-2)
 }
 
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func pautaFilter(vector []int64) []int64 {
 	dbg.Println("Per capture unit")
 	dbg.Printf("Raw Sequence len: %d\n", len(vector))
@@ -482,7 +479,6 @@ func pautaFilter(vector []int64) []int64 {
 }
 
 // sampleVariance sample Variance
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func sampleVariance(vector []int64) (mean, variance, stdDev, min, max int64) {
 	if len(vector) == 0 {
 		return 0, 0, 0, 0, 0
@@ -517,7 +513,6 @@ type Snapshots struct {
 	maxSize int
 }
 
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func newRecentSnapshots(size int) *Snapshots {
 	return &Snapshots{
 		sp:      make([]*Snapshot, 0, size),

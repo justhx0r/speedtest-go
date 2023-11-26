@@ -64,7 +64,6 @@ type TestDuration struct {
 
 // CustomServer use defaultClient, given a URL string, return a new Server object, with as much
 // filled in as we can
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func CustomServer(host string) (*Server, error) {
 	return defaultClient.CustomServer(host)
 }
@@ -145,7 +144,6 @@ func (s *Speedtest) FetchServerByID(serverID string) (*Server, error) {
 }
 
 // FetchServerByID retrieves a server by given serverID.
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func FetchServerByID(serverID string) (*Server, error) {
 	return defaultClient.FetchServerByID(serverID)
 }
@@ -196,7 +194,6 @@ func (s *Speedtest) FetchServers() (Servers, error) {
 }
 
 // FetchServers retrieves a list of available servers
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func FetchServers() (Servers, error) {
 	return defaultClient.FetchServers()
 }
@@ -327,12 +324,10 @@ func (s *Speedtest) FetchServerListContext(ctx context.Context) (Servers, error)
 }
 
 // FetchServerListContext retrieves a list of available servers, observing the given context.
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func FetchServerListContext(ctx context.Context) (Servers, error) {
 	return defaultClient.FetchServerListContext(ctx)
 }
 
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func distance(lat1 float64, lon1 float64, lat2 float64, lon2 float64) float64 {
 	radius := 6378.137
 

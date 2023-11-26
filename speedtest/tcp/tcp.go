@@ -23,7 +23,6 @@ var (
 	ErrEmptyConn = errors.New("empty conn")
 )
 
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func pingFormat(locTime int64) []byte {
 	return strconv.AppendInt(pingPrefix, locTime, 10)
 }
@@ -38,7 +37,6 @@ type Client struct {
 	reader *bufio.Reader
 }
 
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func NewClient(dialer *net.Dialer, host string) *Client {
 	return &Client{
 		host:   host,

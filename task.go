@@ -18,7 +18,6 @@ type Task struct {
 	title   string
 }
 
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func InitTaskManager(isOut bool) *TaskManager {
 	tm := &TaskManager{sm: ysmrr.NewSpinnerManager(), isOut: isOut}
 	if isOut {

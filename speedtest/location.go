@@ -44,7 +44,6 @@ var Locations = map[string]*Location{
 	"bangkok":      {"bangkok", "th", 13.7248936, 100.493026},
 }
 
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func PrintCityList() {
 	fmt.Println("Available city labels (case insensitive): ")
 	fmt.Println(" CC\t\tCityLabel\tLocation")
@@ -53,7 +52,6 @@ func PrintCityList() {
 	}
 }
 
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func GetLocation(locationName string) (*Location, error) {
 	loc, ok := Locations[strings.ToLower(locationName)]
 	if ok {
@@ -63,7 +61,6 @@ func GetLocation(locationName string) (*Location, error) {
 }
 
 // NewLocation new a Location
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func NewLocation(locationName string, latitude float64, longitude float64) *Location {
 	var loc Location
 	loc.Lat = latitude
@@ -74,7 +71,6 @@ func NewLocation(locationName string, latitude float64, longitude float64) *Loca
 }
 
 // ParseLocation parse latitude and longitude string
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func ParseLocation(locationName string, coordinateStr string) (*Location, error) {
 	ll := strings.Split(coordinateStr, ",")
 	if len(ll) == 2 {
@@ -101,7 +97,6 @@ func (l *Location) String() string {
 }
 
 // betweenRange latitude and longitude range check
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func betweenRange(inputStrValue string, interval float64) (float64, error) {
 	value, err := strconv.ParseFloat(inputStrValue, 64)
 	if err != nil {

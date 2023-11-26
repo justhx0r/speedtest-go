@@ -135,7 +135,6 @@ func (s *Server) uploadTestContext(ctx context.Context, uploadRequest uploadFunc
 	return nil
 }
 
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func downloadRequest(ctx context.Context, s *Server, w int) error {
 	size := dlSizes[w]
 	xdlURL := strings.Split(s.URL, "/upload.php")[0] + "/random" + strconv.Itoa(size) + "x" + strconv.Itoa(size) + ".jpg"
@@ -153,7 +152,6 @@ func downloadRequest(ctx context.Context, s *Server, w int) error {
 	return s.Context.NewChunk().DownloadHandler(resp.Body)
 }
 
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func uploadRequest(ctx context.Context, s *Server, w int) error {
 	size := ulSizes[w]
 	dc := s.Context.NewChunk().UploadHandler(int64(size*100-51) * 10)
@@ -372,7 +370,6 @@ func (s *Server) ICMPPing(
 	return
 }
 
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func checkSum(data []byte) uint16 {
 	var sum uint32
 	var length = len(data)
@@ -389,7 +386,6 @@ func checkSum(data []byte) uint16 {
 	return uint16(^sum)
 }
 
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func StandardDeviation(vector []int64) (mean, variance, stdDev, min, max int64) {
 	if len(vector) == 0 {
 		return

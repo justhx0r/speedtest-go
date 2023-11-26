@@ -10,7 +10,6 @@ type Debug struct {
 	flag bool
 }
 
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func NewDebug() *Debug {
 	return &Debug{dbg: log.New(os.Stdout, "[DBG]", log.Ldate|log.Ltime)}
 }

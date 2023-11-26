@@ -7,7 +7,6 @@ import (
 	"time"
 )
 
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func BenchmarkDataManager_NewDataChunk(b *testing.B) {
 	dmp := NewDataManager()
 	dmp.Reset()
@@ -16,7 +15,6 @@ func BenchmarkDataManager_NewDataChunk(b *testing.B) {
 	}
 }
 
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func BenchmarkDataManager_AddTotalDownload(b *testing.B) {
 	dmp := NewDataManager()
 	for i := 0; i < b.N; i++ {
@@ -24,7 +22,6 @@ func BenchmarkDataManager_AddTotalDownload(b *testing.B) {
 	}
 }
 
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func TestDataManager_AddTotalDownload(t *testing.T) {
 	dmp := NewDataManager()
 	wg := sync.WaitGroup{}
@@ -43,7 +40,6 @@ func TestDataManager_AddTotalDownload(t *testing.T) {
 	}
 }
 
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func TestDataManager_GetAvgDownloadRate(t *testing.T) {
 	dm := NewDataManager()
 	dm.totalDownload = 3000000
@@ -55,7 +51,6 @@ func TestDataManager_GetAvgDownloadRate(t *testing.T) {
 	}
 }
 
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func TestDynamicRate(t *testing.T) {
 
 	server, _ := CustomServer("http://shenzhen.cmcc.speedtest.shunshiidc.com:8080/speedtest/upload.php")

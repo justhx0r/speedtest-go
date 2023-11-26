@@ -6,7 +6,6 @@ import (
 	"log"
 )
 
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func main() {
 	// _, _ = speedtest.FetchUserInfo()
 	// Get a list of servers near a specified location
@@ -37,7 +36,6 @@ func main() {
 	}
 }
 
-//garble:controlflow flatten_passes=max junk_jumps=max block_splits=max flatten_hardening=xor,delegate_table
 func checkError(err error) {
 	if err != nil {
 		log.Fatal(err)
